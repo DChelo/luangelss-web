@@ -9,9 +9,9 @@ import '@fortawesome/fontawesome-free/js/all.js'
 import 'datatables.net-bs5';
 import 'datatables.net-buttons-bs5';
 import 'datatables.net-buttons/js/buttons.html5.mjs';
-// import jsZip from 'jszip'
-// import pdfMake from 'pdfmake/build/pdfmake'
-// import pdfFonts from 'pdfmake/build/vfs_fonts'
+import jsZip from 'jszip'
+import pdfMake from 'pdfmake/build/pdfmake'
+
 // pdfMake.vfs = pdfFonts.pdfMake.vfs
 
 window.JSZIP = jsZip

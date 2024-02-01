@@ -1,10 +1,10 @@
-<x-app title="Usuarios">
+<x-app title="Home">
     <section class="container">
         <div class="d-flex justify-content-center my-4" >
-            <h1>Listado de usuarios</h1>
+            <h1>Productos Luangelss</h1>
         </div>
 
-        <the-user-list :users="{{ $users }}"/>
+        <the-product-home :products="{{ $products }}" :/>
 
     </section>
 </x-app>

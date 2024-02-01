@@ -13,11 +13,10 @@ class UserSeeder extends Seeder
     public function run()
     {
         $user = new User([
-            'number_id' => '1114238109',
             'name' => 'Angelo',
             'last_name' => 'Estrada',
             'email' => 'lucumiangelo123@gmail.com',
-            'password' => bcrypt(123456789),
+            'password' => 123456789,
             'remember_token' => Str::random(10),
         ]);
 

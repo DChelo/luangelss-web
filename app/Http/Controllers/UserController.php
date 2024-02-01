@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\User\UserRequest;
 
 class UserController extends Controller
 {
@@ -15,33 +16,25 @@ class UserController extends Controller
         return response()->json(['Users' => $users], 200);
     }
 
-    public function create()
+    public function store(UserRequest $request)
     {
-        //
+        $user = new User($request->all());
+		$user->save();
+		if (!$request->ajax()) return back()->with("success","User created");
+		return response()->json(['status' => 'User created', 'user' => $user], 201);
     }
 
-    public function store(Request $request)
+    public function update(UserRequest $request, User $user)
     {
-        //
+        $user->update($request->all());
+        if (!$request->ajax()) return back()->with("success","User updated");
+		return response()->json([], 204);
     }
 
-    public function show($id)
+    public function destroy(Request $request, User $user)
     {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
+        $user->delete();
+        if (!$request->ajax()) return back()->with("success","User deleted");
+		return response()->json([], 204);
     }
 }
